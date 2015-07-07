@@ -1,0 +1,182 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.fixFloat {
+  clear: both;
+}
+html,
+body {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #243245;
+}
+.container {
+  background: #DED4B9;
+  width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+}
+.container .header {
+  width: 1080px;
+  height: 95px;
+  overflow: hidden;
+  background: rgba(70, 67, 58, 0.85);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -540px;
+  z-index: 1000;
+}
+.container .header .hLogo img {
+  height: 95px;
+  width: auto;
+  padding: 10px;
+}
+.container .header .social {
+  width: 357px;
+  height: 45px;
+  float: right;
+}
+.container .header .social ul {
+  margin-right: 5px;
+}
+.container .header .social ul li {
+  display: inline-block;
+  width: 75px;
+  margin: 0 5px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+}
+.container .header .social ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  text-decoration: none;
+}
+.container .header .social ul li a:hover {
+  font-weight: bold;
+}
+.container .header .nav {
+  width: auto;
+  height: 45px;
+  margin-top: 50px;
+  margin-right: -357px;
+  float: right;
+}
+.container .header .nav ul {
+  margin-right: 5px;
+}
+.container .header .nav ul li {
+  display: inline-block;
+  width: 95px;
+  margin: 0 5px;
+  text-align: center;
+}
+.container .header .nav ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 45px;
+  padding-top: 10px;
+  text-decoration: none;
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.container .header .nav ul li .nonActive:hover {
+  -webkit-animation-name: navhover;
+          animation-name: navhover;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+.container .header .nav ul li a:hover,
+.container .header .nav ul li .active {
+  font-weight: bold;
+  color: #46433A;
+  background: rgba(255, 255, 255, 0.4);
+}
+.container .header .nav ul li .active {
+  cursor: default;
+}
+.container .content {
+  padding: 10px;
+  margin-top: 95px;
+}
+.container .content h1 {
+  color: red;
+}
+.container .content .about {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #46433A;
+}
+.container .content .about .aboutContainer {
+  overflow: hidden;
+  position: relative;
+  width: 800px;
+  height: auto;
+  margin: 0 auto;
+  padding: 5px;
+}
+.container .content .about .aboutContainer .infoPicture {
+  width: 200px;
+  display: inline-block;
+  text-align: center;
+  float: left;
+}
+.container .content .about .aboutContainer .infoPicture .me {
+  width: 200px;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  border: 5px solid black;
+}
+.container .content .about .aboutContainer .infoContent {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 590px;
+  height: 100%;
+}
+.container .content .about .aboutContainer .infoContent .status {
+  width: 90%;
+  background: #243245;
+  text-align: center;
+  line-height: 30px;
+  margin: 10px auto;
+  border-radius: 150px;
+  border: 2px solid white;
+}
+.container .content .about .aboutContainer .infoContent .status p {
+  font-weight: bold;
+  color: #DED4B9;
+}
+@-webkit-keyframes navhover {
+  from {
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    font-weight: bold;
+    color: #46433A;
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+@keyframes navhover {
+  from {
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  to {
+    font-weight: bold;
+    color: #46433A;
+    background: rgba(255, 255, 255, 0.4);
+  }
+}

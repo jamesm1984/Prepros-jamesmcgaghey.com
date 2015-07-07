@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(
+      rel='stylesheet',
+      href='css/style.css'
+    )
+
+  body
+    div.container
+      div.header
+        include ./includes/header_logo.jade
+        div.social
+          include ./includes/social_media.jade
+        div.nav
+          include ./includes/index_nav.jade
+      div.content
+        include ./includes/index_content.jade

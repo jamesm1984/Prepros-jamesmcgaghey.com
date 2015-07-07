@@ -1,0 +1,176 @@
+*{
+	box-sizing:border-box;
+	margin:0;
+	padding:0;
+}
+
+.fixFloat{
+	clear: both;
+}
+
+html,body{
+	display:block;
+	width:100%;
+	height:100%;
+	background:#243245;
+}
+
+.container{
+	background:#DED4B9;
+	width:1080px;
+	height:100%;
+	margin: 0 auto;
+	.header{
+		width:1080px;
+		height:95px;
+		overflow: hidden;
+		background:rgba(70, 67, 58, 0.85);
+		position: fixed;
+		top:0;
+		left:50%;
+		margin-left: -540px;
+		z-index: 1000;
+		.hLogo{
+			img{
+				height: 95px;
+				width: auto;
+				padding: 10px;
+			}
+		}
+		.social{
+			width:357px;
+			height:45px;
+			float:right;
+			ul{
+				margin-right: 5px;
+				li{
+					display:inline-block;
+					width:75px;
+					margin:0 5px;
+					text-align:center;
+					background:rgba(255,255,255,0.6);
+					a{
+						display: block;
+						width:100%;
+						height:100%;
+						line-height:45px;
+						text-decoration:none;
+					}
+					a:hover{
+						font-weight:bold;
+					}
+				}
+			}
+		}
+		.nav{
+			width:auto;
+			height:45px;
+			margin-top: 50px;
+			margin-right: -357px;
+			float:right;
+			ul{
+				margin-right: 5px;
+				li{
+					display:inline-block;
+					width:95px;
+					margin:0 5px;
+					text-align:center;
+					a{
+						display: block;
+						width:100%;
+						height:100%;
+						line-height:45px;
+						padding-top: 10px;
+						text-decoration:none;
+						color: white;
+						background:rgba(0,0,0,0.4);
+						border-top-left-radius: 50%;
+						border-top-right-radius: 50%;
+					}
+					.nonActive:hover{
+						animation-name: navhover;
+						animation-duration: 2s;
+					}
+					a:hover, .active{
+						font-weight:bold;
+						color:#46433A;
+						background:rgba(255,255,255,0.4);
+					}
+					.active{
+						cursor: default;
+					}
+				}
+			}
+		}
+	}
+
+	.content{
+		padding: 10px;
+		margin-top: 95px;
+		h1{
+			color:red;
+		}
+		.about{
+			display:block;
+			width:100%;
+			height:auto;
+			background: #46433A;
+			.aboutContainer{
+				overflow: hidden;
+    			position: relative;
+				width:800px;
+				height: auto;
+				margin: 0 auto;
+				padding: 5px;
+				.infoPicture{
+					width:200px;
+					display: inline-block;
+					text-align: center;
+					float: left;
+					.me{
+						width: 200px;
+						border-top-left-radius: 150px;
+						border-top-right-radius: 150px;
+						border-bottom-left-radius: 150px;
+						border-bottom-right-radius: 150px;
+						border:5px solid black;
+					}
+				}
+				.infoContent{
+					position: absolute;
+				    right: 0;
+				    top: 0;
+					width:590px;
+					height: 100%;
+					.status{
+						width: 90%;
+						background: #243245;
+						text-align: center;
+						line-height: 30px;
+						margin:10px auto;
+						border-radius: 150px;
+						border: 2px solid white;
+						p{
+							font-weight: bold;
+							color: #DED4B9;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes navhover {
+    from {
+    	color: white;
+		background:rgba(0,0,0,0.4);
+    }
+    to {
+    	font-weight:bold;
+		color:#46433A;
+		background:rgba(255,255,255,0.4);
+    }
+}
+
+
