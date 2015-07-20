@@ -6,6 +6,10 @@ html(lang="en")
       rel='stylesheet',
       href='css/style.css'
     )
+    meta(
+      name='viewport',
+      content='width=device-width, initial-scale=1'
+    )
 
   body
     div.container
@@ -15,5 +19,9 @@ html(lang="en")
           include ./includes/social_media.jade
         div.nav
           include ./includes/index_nav.jade
-      div.content
+      div.aboutContent
         include ./includes/index_content.jade
+      div.workContent
+        include ./includes/work_content.jade
+      div.footer
+        p Copyright &copy; 2015 James McGaghey

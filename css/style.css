@@ -15,13 +15,18 @@ body {
 }
 .container {
   background: #DED4B9;
-  width: 1080px;
-  height: 100%;
+  width: 100%;
+  max-width: 1080px;
+  min-width: 320px;
+  height: auto;
+  min-height: 100%;
   margin: 0 auto;
+  overflow: hidden;
 }
 .container .header {
-  width: 1080px;
-  height: 95px;
+  width: 100%;
+  max-width: 1080px;
+  height: 110px;
   overflow: hidden;
   background: rgba(70, 67, 58, 0.85);
   position: fixed;
@@ -31,21 +36,20 @@ body {
   z-index: 1000;
 }
 .container .header .hLogo img {
-  height: 95px;
+  height: 110px;
   width: auto;
   padding: 10px;
 }
 .container .header .social {
-  width: 357px;
-  height: 45px;
+  width: 177px;
   float: right;
-}
-.container .header .social ul {
-  margin-right: 5px;
+  margin-top: 5px;
+  margin-right: 10px;
 }
 .container .header .social ul li {
   display: inline-block;
-  width: 75px;
+  width: 45px;
+  height: 45px;
   margin: 0 5px;
   text-align: center;
   background: rgba(255, 255, 255, 0.6);
@@ -56,96 +60,136 @@ body {
   height: 100%;
   line-height: 45px;
   text-decoration: none;
+  text-indent: -99999;
 }
 .container .header .social ul li a:hover {
   font-weight: bold;
 }
-.container .header .nav {
-  width: auto;
-  height: 45px;
-  margin-top: 50px;
-  margin-right: -357px;
-  float: right;
+.container .header .social ul .twitter {
+  background: url(../img/twitter.png) no-repeat;
 }
-.container .header .nav ul {
-  margin-right: 5px;
+.container .header .social ul .github {
+  background: url(../img/github.png) no-repeat;
+}
+.container .header .social ul .linkedin {
+  background: url(../img/linkedin.png) no-repeat;
+}
+.container .header .social ul .twitter:hover,
+.container .header .social ul .github:hover,
+.container .header .social ul .linkedin:hover {
+  animation-name: socialhover;
+  animation-duration: .1s;
+}
+.container .header .social ul .twitter:active,
+.container .header .social ul .github:active,
+.container .header .social ul .linkedin:active {
+  background-position: 0px bottom;
+}
+.container .header .social ul li:hover {
+  width: 50px;
+  height: 50px;
+  background-size: 50px 100px;
+}
+.container .header .nav {
+  width: 302px;
+  height: 45px;
+  margin-top: 65px;
+  margin-right: -176px;
+  float: right;
+  overflow: hidden;
+  padding-left: 5px;
 }
 .container .header .nav ul li {
   display: inline-block;
-  width: 95px;
-  margin: 0 5px;
+  width: 65px;
+  margin: 0 2.5px;
   text-align: center;
 }
 .container .header .nav ul li a {
   display: block;
   width: 100%;
   height: 100%;
-  line-height: 45px;
-  padding-top: 10px;
+  line-height: 50px;
+  padding-bottom: 10px;
   text-decoration: none;
   color: white;
   background: rgba(0, 0, 0, 0.4);
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
+  border-radius: 10px;
 }
 .container .header .nav ul li .nonActive:hover {
-  -webkit-animation-name: navhover;
-          animation-name: navhover;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  animation-name: navhover;
+  animation-duration: .3s;
 }
 .container .header .nav ul li a:hover,
-.container .header .nav ul li .active {
+.container .header .nav ul li .active,
+.container .header .nav ul li .active:active {
   font-weight: bold;
   color: #46433A;
   background: rgba(255, 255, 255, 0.4);
+  border: none;
+}
+.container .header .nav ul li a:active {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  margin-bottom: -10px;
 }
 .container .header .nav ul li .active {
   cursor: default;
 }
-.container .content {
-  padding: 10px;
-  margin-top: 95px;
-}
-.container .content h1 {
-  color: red;
-}
-.container .content .about {
+.container .aboutContent {
   display: block;
-  width: 100%;
-  height: auto;
-  background: #46433A;
+  padding: 10px;
+  padding-top: 120px;
 }
-.container .content .about .aboutContainer {
-  overflow: hidden;
-  position: relative;
-  width: 800px;
+.container .aboutContent h1 {
+  color: #46433A;
+}
+.container .aboutContent .about {
+  width: 98%;
   height: auto;
-  margin: 0 auto;
+  margin: 10px auto;
+  background: url(../img/bg.jpg) no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  border-radius: 5px;
   padding: 5px;
 }
-.container .content .about .aboutContainer .infoPicture {
+.container .aboutContent .about .infoPicture {
+  display: block;
+  vertical-align: top;
   width: 200px;
-  display: inline-block;
+  margin-left: 7.5%;
   text-align: center;
-  float: left;
+  background: black;
+  border-radius: 10px;
 }
-.container .content .about .aboutContainer .infoPicture .me {
+.container .aboutContent .about .infoPicture .me {
+  display: block;
   width: 200px;
-  border-top-left-radius: 150px;
-  border-top-right-radius: 150px;
-  border-bottom-left-radius: 150px;
-  border-bottom-right-radius: 150px;
-  border: 5px solid black;
+  border-radius: 10px;
+  padding: 2px;
 }
-.container .content .about .aboutContainer .infoContent {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 590px;
-  height: 100%;
+.container .aboutContent .about .infoPicture .info {
+  margin-top: -47px;
+  color: white;
+  padding-bottom: 2px;
 }
-.container .content .about .aboutContainer .infoContent .status {
+.container .aboutContent .about .infoContent {
+  display: block;
+  margin-top: -206px;
+  margin-left: 47.5%;
+  width: 45%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 10px;
+  padding: 5px;
+}
+.container .aboutContent .about .infoContent p {
+  padding: 10px;
+  font-weight: bold;
+}
+.container .aboutContent .about .infoContent .status {
   width: 90%;
   background: #243245;
   text-align: center;
@@ -154,19 +198,110 @@ body {
   border-radius: 150px;
   border: 2px solid white;
 }
-.container .content .about .aboutContainer .infoContent .status p {
+.container .aboutContent .about .infoContent .status p {
+  font-weight: bold;
+  color: #DED4B9;
+  padding: 0;
+}
+.container .aboutContent .about .location {
+  width: 85%;
+  text-align: center;
+  margin: 50px auto 0;
+  border-radius: 150px;
+  background: white;
+  padding: 2px;
+}
+.container .aboutContent .about .location p {
+  display: block;
+  width: auto;
+  padding: 5px;
+  border-radius: 150px;
+  background: #243245;
   font-weight: bold;
   color: #DED4B9;
 }
-@-webkit-keyframes navhover {
-  from {
-    color: white;
-    background: rgba(0, 0, 0, 0.4);
+.container .aboutContent .about .location p span {
+  margin-left: 5px;
+}
+.container .workContent {
+  display: block;
+  padding: 10px;
+}
+.container .workContent h1 {
+  color: #46433A;
+}
+.container .workContent .work {
+  display: block;
+  width: 98%;
+  height: auto;
+  margin: 10px auto;
+  padding: 10px 0;
+  background: red;
+  border-radius: 5px;
+  padding: 5px;
+}
+.container .workContent .work .workContainer {
+  overflow: hidden;
+  position: relative;
+  width: 800px;
+  height: auto;
+  margin: 0 auto;
+  padding: 5px;
+}
+.container .footer {
+  width: 100%;
+  background: rgba(70, 67, 58, 0.85);
+  text-align: center;
+  color: white;
+  padding: 5px 0;
+}
+@media screen and (max-width: 1080px) {
+  .container .header {
+    left: 0;
+    margin-left: 0;
   }
-  to {
-    font-weight: bold;
-    color: #46433A;
-    background: rgba(255, 255, 255, 0.4);
+  .container .nav {
+    display: block;
+  }
+}
+@media screen and (max-width: 726px) {
+  .container .header .hLogo img {
+    width: 35.7%;
+    height: auto;
+  }
+}
+@media screen and (max-width: 720px) {
+  .container .aboutContent .about .infoPicture {
+    display: block;
+    margin: 0 auto;
+  }
+  .container .aboutContent .about .infoContent {
+    width: 85%;
+    display: block;
+    margin: 10px auto 0;
+  }
+  .container .aboutContent .about .location {
+    margin: 10px auto 0;
+  }
+  .container .aboutContent .about .location p span {
+    display: block;
+    margin: 0;
+  }
+}
+@media screen and (max-width: 470px) {
+  .container .header .hLogo img {
+    width: 115px;
+    height: auto;
+  }
+  .container .header .nav {
+    float: none;
+    display: block;
+    margin: 8px auto 0;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 320px;
   }
 }
 @keyframes navhover {
@@ -178,5 +313,17 @@ body {
     font-weight: bold;
     color: #46433A;
     background: rgba(255, 255, 255, 0.4);
+  }
+}
+@keyframes socialhover {
+  from {
+    width: 45px;
+    height: 45px;
+    background-size: 45px 90px;
+  }
+  to {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 100px;
   }
 }
